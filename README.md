@@ -1,1 +1,1 @@
-Ez setup
+Install with stow .
