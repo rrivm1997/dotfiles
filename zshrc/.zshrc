@@ -27,13 +27,12 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 plugins=(git
    zsh-autosuggestions
-   zsh-syntax-highlighting
    web-search
    )
 
 
 source $ZSH/oh-my-zsh.sh
-
+source /home/kali/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Aliases
 
@@ -167,4 +166,3 @@ export PATH="$PATH:/home/rene/.local/bin"
 #alias tunnel='ngrok http 4445'
 #alias fuzz='ffuf -w ~/hacking/SecLists/content_discovery_all.txt -mc all -u'
 #alias gr='~/go/src/github.com/tomnomnom/gf/gf' 
-
