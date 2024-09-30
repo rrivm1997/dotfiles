@@ -25,11 +25,11 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 plugins=(git
    zsh-autosuggestions
+   zsh-syntax-highlighting
    web-search
    )
 
 source $ZSH/oh-my-zsh.sh
-source ${(q-)PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Aliases
 
