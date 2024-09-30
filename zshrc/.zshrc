@@ -10,6 +10,7 @@ fi
 export ZSH="$HOME/.oh-my-zsh"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 
@@ -17,6 +18,7 @@ typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 # load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Which plugins would you like to load?
@@ -66,7 +68,10 @@ alias ehosts='cd; cd /etc; sudo subl hosts'
 # fzf
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+
 # Set up fzf key bindings and fuzzy completion
+
 source <(fzf --zsh)
 
 
@@ -92,16 +97,17 @@ export FZF_ALT_C_COMMAND="fdfind --type=d --hidden --strip-cwd-prefix --exclude 
 # Use fd (https://github.com/sharkdp/fd) for listing path candidates.
 # - The first argument to the function ($1) is the base path to start traversal
 # - See the source code (completion.{bash,zsh}) for the details.
+
 _fzf_compgen_path() {
   fdfind --hidden --exclude .git . "$1"
 }
 
 
 # Use fd to generate the list for directory completion
+
 _fzf_compgen_dir() {
   fdfind --type=d --hidden --exclude .git . "$1"
 }
-
 
 source ~/fzf-git.sh/fzf-git.sh
 
