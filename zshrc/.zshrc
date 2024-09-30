@@ -29,7 +29,7 @@ plugins=(git
    )
 
 source $ZSH/oh-my-zsh.sh
-source /home/kali/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ${(q-)PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Aliases
 
