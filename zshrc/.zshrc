@@ -1,5 +1,3 @@
-
-
 ## Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -21,15 +19,12 @@ typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
-
 # Which plugins would you like to load?
-
 
 plugins=(git
    zsh-autosuggestions
    web-search
    )
-
 
 source $ZSH/oh-my-zsh.sh
 source /home/kali/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -49,19 +44,15 @@ alias ltree="eza --tree --level=2  --icons --git"
 alias cat='batcat '
 alias sai='sudo apt install '
 
-
-# User configuration
-### NEED TO LEARN
-
 # SEC STUFF
 
 alias prepnotes='mkdir enum exploit privesc'
 alias nm="nmap -sC -sV -oN nmap"
-alias autorecon='sudo autorecon '
-#alias autorecon=' sudo autorecon --dirbuster.tool gobuster '
-alias scan='rustscan --ulimit 500 -a' 
-alias prepnotes='mkdir enum exploit privesc'
+alias recon='sudo autorecon '
+#alias recon=' sudo autorecon --dirbuster.tool gobuster '
+alias scan='rustscan --ulimit 5000 -a' 
 alias clean='sed "s/\x1b\[[0-9;]*m//g"'
+alias ehosts='cd; cd /etc; sudo subl hosts'
 
 #alias gobust='gobuster dir --wordlist ~/security/wordlists/diccnoext.txt --wildcard --url'
 #alias dirsearch='python dirsearch.py -w db/dicc.txt -b -u'
@@ -74,14 +65,12 @@ alias clean='sed "s/\x1b\[[0-9;]*m//g"'
 
 # fzf
 
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
 
 
 # setup fzf theme 
-
 
 fg="#CBE0F0"
 bg="#011628"
@@ -90,12 +79,10 @@ purple="#B388FF"
 blue="#06BCE4"
 cyan="#2CF9ED"
 
-
 export FZF_DEFAULT_OPTS="--color=fg:${fg},bg:${bg},hl:${purple},fg+:${fg},bg+:${bg_highlight},hl+:${purple},info:${blue},prompt:${cyan},pointer:${cyan},marker:${cyan},spinner:${cyan},header:${cyan}"
 
 
 # Use fd instead of fzf 
-
 
 export FZF_DEFAULT_COMMAND="fdfind --hidden --strip-cwd-prefix --exclude .git"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
@@ -146,23 +133,9 @@ _fzf_comprun() {
 
 # Bat (better cat)
 
-
 export BATCAT_THEME=Dracula
 
 
 # pipx
 
-
 export PATH="$PATH:/home/rene/.local/bin"
-
-
-# alias for the future
-
-
-#alias gobust='gobuster dir --wordlist ~/security/wordlists/diccnoext.txt --wildcard --url'
-#alias dirsearch='python dirsearch.py -w db/dicc.txt -b -u'
-#alias massdns='~/hacking/tools/massdns/bin/massdns -r ~/hacking/tools/massdns/lists/resolvers.txt -t A -o S bf-targets.txt -w livehosts.txt -s 4000'
-#alias server='python -m http.server 4445'
-#alias tunnel='ngrok http 4445'
-#alias fuzz='ffuf -w ~/hacking/SecLists/content_discovery_all.txt -mc all -u'
-#alias gr='~/go/src/github.com/tomnomnom/gf/gf' 
