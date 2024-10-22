@@ -1,33 +1,22 @@
-## Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+ZSH_THEME="candy"
 
-ZSH_THEME="powerlevel10k/powerlevel10k"
 
-# Which plugins would you like to load?
-
+# Plugins
 plugins=(git
-   zsh-autosuggestions
-   zsh-syntax-highlighting
-   web-search
-   )
+	zsh-autosuggestions
+	zsh-syntax-highlighting
+	web-search
+	)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -38,12 +27,10 @@ alias zshconf='sudo subl ~/.zshrc'
 alias wtconf='sudo subl ~/.config/wezterm/wezterm.lua'
 alias tmuxconf='sudo subl ~/.config/tmux/tmux.conf'
 alias tmuxconfr='sudo subl ~/.config/tmux/tmux.reset.conf'
-eval "$(zoxide init zsh)" # ---- Zoxide (better cd) ----
 alias cd="z" # ---- Zoxide (better cd) ----
 alias l="eza -l --icons --git -a"
 alias lt="eza --tree --level=2 --long --icons --git"
 alias ltree="eza --tree --level=2  --icons --git"
-alias cat='batcat '
 alias sai='sudo apt install '
 
 # SEC STUFF
@@ -62,21 +49,13 @@ alias ehosts='cd; cd /etc; sudo subl hosts'
 #alias server='python -m http.server 4445'
 #alias tunnel='ngrok http 4445'
 #alias fuzz='ffuf -w ~/hacking/SecLists/content_discovery_all.txt -mc all -u'
-#alias gr='~/go/src/github.com/tomnomnom/gf/gf' 
-
-
-# fzf
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+#alias gr='~/go/src/github.com/tomnomnom/gf/gf'
 
 
 # Set up fzf key bindings and fuzzy completion
-
 source <(fzf --zsh)
 
-
 # setup fzf theme 
-
 fg="#CBE0F0"
 bg="#011628"
 bg_highlight="#143652"
@@ -86,9 +65,7 @@ cyan="#2CF9ED"
 
 export FZF_DEFAULT_OPTS="--color=fg:${fg},bg:${bg},hl:${purple},fg+:${fg},bg+:${bg_highlight},hl+:${purple},info:${blue},prompt:${cyan},pointer:${cyan},marker:${cyan},spinner:${cyan},header:${cyan}"
 
-
 # Use fd instead of fzf 
-
 export FZF_DEFAULT_COMMAND="fdfind --hidden --strip-cwd-prefix --exclude .git"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="fdfind --type=d --hidden --strip-cwd-prefix --exclude .git"
@@ -104,7 +81,6 @@ _fzf_compgen_path() {
 
 
 # Use fd to generate the list for directory completion
-
 _fzf_compgen_dir() {
   fdfind --type=d --hidden --exclude .git . "$1"
 }
@@ -138,10 +114,4 @@ _fzf_comprun() {
 
 
 # Bat (better cat)
-
 export BATCAT_THEME=Dracula
-
-
-# pipx
-
-export PATH="$PATH:/home/rene/.local/bin"
